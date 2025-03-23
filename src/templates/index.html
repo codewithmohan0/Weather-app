@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🌤️ Weather Web App 🌧️</h1>
+    </header>
+    <main>
+        <h2>Get Current Weather</h2>
+        <form action="/result" method="POST">
+            <label for="city">City Name:</label>
+            <input type="text" id="city" name="city" required>
+            <br>
+            <label for="units">Select Temperature Unit:</label>
+            <select id="units" name="units">
+                <option value="metric">Celsius (°C)</option>
+                <option value="imperial">Fahrenheit (°F)</option>
+            </select>
+            <br>
+            <button type="submit">Get Weather</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Weather Web App</p>
+    </footer>
+</body>
+</html>

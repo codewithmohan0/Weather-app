@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Information for {{ city.upper() }}</h1>
+        <div class="weather-info">
+            <div class="weather-icon">
+                {{ weather_data.icon|safe }}
+            </div>
+            <p>Temperature: {{ weather_data.temp }}{{ unit_symbol }}</p>
+            <p>Feels Like: {{ weather_data.feels_like }}{{ unit_symbol }}</p>
+            <p>Humidity: {{ weather_data.humidity }}%</p>
+            <p>Condition: {{ weather_data.description|capitalize }}</p>
+        </div>
+        <a href="{{ url_for('index') }}">Check another city</a>
+    </div>
+</body>
+</html>
